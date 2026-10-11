@@ -1,0 +1,493 @@
+/* BSB Motos Elétricas - LP. Mobile primeiro (base 360px), expande com min-width.
+   Linguagem: minimalista premium. Hero em cartão escuro (ref. VanMoof) + tipografia técnica larga (ref. Lamborghini),
+   com Archivo variável (OFL, self-host em fonts/). Página escura (paleta carbono + acento Giallo, ref. Lamborghini); cartões preto showroom no Hero e no CTA final.
+   Paleta e fonte PROVISÓRIAS até a marca definir as suas [CONFIRMAR com cliente/logo].
+   Sistema de forma: cantos retos (0px) em tudo, como na referência Lamborghini; títulos em caixa alta. */
+
+@font-face{
+  font-family:"Archivo";
+  src:url("../fonts/archivo-var.woff2") format("woff2-variations"),url("../fonts/archivo-var.woff2") format("woff2");
+  font-weight:100 900;font-stretch:62% 125%;font-style:normal;font-display:swap;
+}
+
+:root{
+  /* Paleta escura inspirada no showroom da Lamborghini (docs: DESIGN(3).md): superfícies carbono,
+     texto branco perolado, fios grafite e um único acento Giallo usado com parcimônia. Tema único (sempre escuro). */
+  --bg:#181818;          /* Carbon Deep: fundo da página */
+  --surface:#202020;     /* Carbony: seções alternadas */
+  --raised:#2A2A2A;      /* chips, ficha, consentimento */
+  --ink:#F5F5F5;         /* Marble/Pearl: texto principal */
+  --muted:#969696;       /* Ash: texto secundário (5,5:1 sobre #202020) */
+  --line:#313131;        /* Anvil: fios */
+  --card:#0E0E0E;        /* preto showroom: cartões do Hero e do CTA final */
+  --on-card:#F5F5F5;--on-card-muted:#A8A8A8;
+  --accent:#FFC000;      /* Giallo Vivo: só rótulos, números e status */
+  --accent-on-card:#FFC000;
+  --wa:#25D366;
+  --pend-bg:#3B3200;--pend-ink:#FFE7A0;--pend-line:#917300;
+  --font:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --pad:16px;--radius:0;--offer-h:0px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  /* escala de camadas */
+  --z-header:20;--z-offer:21;--z-fixed:30;--z-dialog:40;--z-skip:50;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:96px;color-scheme:dark}
+body{margin:0;font:400 1rem/1.6 var(--font);font-stretch:100%;color:var(--ink);background:var(--bg);padding-bottom:84px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{margin:0 0 .6em;text-wrap:balance}
+h2{font-size:clamp(1.75rem,5.2vw,3rem);font-weight:450;font-stretch:112%;line-height:1.06;letter-spacing:-.025em;max-width:22ch}
+h3{font-size:1.0625rem;font-weight:600;line-height:1.3;letter-spacing:-.005em}
+p{margin:0 0 1em;text-wrap:pretty}
+ul,ol{margin:0 0 1em;padding-left:1.25em}
+a{color:inherit;text-underline-offset:.2em}
+strong{font-weight:600}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:0}
+.on-card :focus-visible,.hero :focus-visible,.offer-bar :focus-visible,.site-header :focus-visible{outline-color:#fff}
+.skip{position:absolute;left:-999px;top:8px;background:var(--raised);color:var(--ink);padding:10px 14px;z-index:var(--z-skip);border-radius:0}
+.skip:focus{left:8px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sprite{position:absolute}
+.nowrap{white-space:nowrap}
+.ph--gap{margin-top:12px}
+
+/* Pendências: sempre visíveis, âmbar suave */
+.pendente{background:var(--pend-bg);color:var(--pend-ink);padding:.05em .4em;border-radius:0;outline:1px dashed var(--pend-line);font-weight:600;font-size:.9em;font-stretch:100%;letter-spacing:0;text-transform:none;line-height:1.7;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+/* ---------- Estrutura e tipografia utilitária ---------- */
+.wrap{width:100%;max-width:1240px;margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:clamp(64px,10vw,128px)}
+.section--surface{background:var(--surface)}
+/* Rótulo técnico (ref. Lamborghini): caixa alta larga, curto. Usado com parcimônia. */
+.label{display:block;font-size:.75rem;font-weight:600;font-stretch:125%;text-transform:uppercase;letter-spacing:.09em;line-height:1.3;color:var(--muted);margin:0 0 14px}
+.label--accent{color:var(--accent)}
+.lead{font-size:1.125rem;line-height:1.55;max-width:56ch;color:var(--ink)}
+.prose{max-width:62ch}
+.note{font-size:.875rem;line-height:1.5;color:var(--muted);max-width:62ch}
+.display{font-stretch:125%;font-weight:250;letter-spacing:-.03em;line-height:.95}
+
+/* ---------- Botões: pílula; grafite sobre claro, off-white sobre escuro; verde só no ícone ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 26px;border-radius:0;background:var(--ink);color:var(--bg);font:550 1rem/1.2 var(--font);font-stretch:105%;text-decoration:none;border:1px solid var(--ink);cursor:pointer;text-align:center;white-space:nowrap;transition:transform .25s var(--ease),background-color .25s var(--ease)}
+.btn:hover{background:color-mix(in oklab,var(--ink) 86%,var(--bg))}
+@media (max-width:379.98px){.btn{white-space:normal;padding-inline:18px}}
+.btn:active{transform:scale(.98)}
+.btn svg{width:20px;height:20px;flex:none;color:var(--wa)}
+.btn--light,.on-card .btn{background:var(--on-card);color:#1A1818;border-color:var(--on-card)}
+.btn--light:hover,.on-card .btn:hover{background:#fff}
+.btn--light svg,.on-card .btn svg{color:#1E8E4E}
+.btn--block{width:100%}
+.btn--sm{min-height:44px;padding:8px 18px;font-size:.9375rem}
+.btn--ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn--ghost:hover{background:var(--surface)}
+.cta-row{margin-top:28px}
+.cta-micro{font-size:.875rem;color:var(--muted);margin:12px 0 0}
+.on-card .cta-micro{color:var(--on-card-muted)}
+
+/* ---------- Faixa de ofertas (condicional) ---------- */
+.offer-bar{position:sticky;top:0;z-index:var(--z-offer);background:var(--card);color:var(--on-card);min-height:40px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;justify-content:center;padding:6px 12px;font:500 .8125rem/1.3 var(--font);text-align:center}
+.offer-bar[hidden]{display:none}
+.offer-bar a{color:var(--on-card)}
+.offer-bar__label{font-stretch:125%;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-on-card)}
+.offer-bar__anchor{display:none;color:var(--on-card-muted)}
+
+/* ---------- Header: cápsula escura flutuante (único uso de vidro) ---------- */
+.site-header{position:sticky;top:calc(var(--offer-h) + 8px);z-index:var(--z-header);height:0}
+.header-row{position:absolute;top:0;left:50%;transform:translateX(-50%);width:calc(100% - 16px);max-width:860px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;min-height:56px;padding:6px;border-radius:0;background:rgba(26,24,24,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);color:var(--on-card)}
+.header-l{display:flex;align-items:center}
+.brand{justify-self:center;display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-stretch:125%;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;white-space:nowrap;color:var(--on-card)}
+.header-row>.btn{justify-self:end}
+.nav{display:none}
+.nav a{white-space:nowrap;text-decoration:none;font-weight:500;font-size:.875rem;padding:10px 12px;color:var(--on-card);border-radius:0;min-height:44px;display:inline-flex;align-items:center}
+.nav a:hover{background:rgba(255,255,255,.08)}
+.menu-m{position:relative}
+.menu-m summary{list-style:none;cursor:pointer;width:44px;height:44px;display:grid;place-items:center;border-radius:0}
+.menu-m summary::-webkit-details-marker{display:none}
+.burger,.burger::before,.burger::after{display:block;width:18px;height:1.5px;background:var(--on-card);border-radius:0;content:""}
+.burger{position:relative}
+.burger::before{position:absolute;top:-6px}.burger::after{position:absolute;top:6px}
+.menu-m[open] .burger{background:transparent}
+.menu-m[open] .burger::before{top:0;transform:rotate(45deg)}
+.menu-m[open] .burger::after{top:0;transform:rotate(-45deg)}
+.menu-m nav{position:absolute;left:0;top:54px;min-width:220px;background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:0;padding:6px;display:grid}
+.menu-m nav a{padding:12px 14px;text-decoration:none;color:var(--on-card);border-radius:0;min-height:44px;display:flex;align-items:center}
+.menu-m nav a:hover{background:rgba(255,255,255,.08)}
+.btn--glass{background:transparent;color:var(--on-card);border:1px solid rgba(255,255,255,.28);min-height:44px;padding:8px 14px;font-size:.8125rem;gap:6px}
+.btn--glass:hover{background:rgba(255,255,255,.1)}
+.btn--glass svg{color:var(--wa);width:18px;height:18px}
+/* Celular estreito: botão do header só com ícone (o texto vira rótulo acessível) e marca menos larga */
+@media (max-width:479.98px){
+  .header-row{grid-template-columns:44px minmax(0,1fr) 44px}
+  .brand{font-stretch:108%;font-size:.75rem;letter-spacing:.06em}
+  .btn--glass{width:44px;padding:0;border-radius:0}
+  .btn--glass span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+}
+
+/* ---------- Hero: cartão escuro com a foto (LCP: sem animação na imagem) ---------- */
+.hero{border:1px solid rgba(255,255,255,.08);margin:8px;border-radius:0;overflow:hidden;position:relative;background:var(--card);color:var(--on-card);display:flex;flex-direction:column;align-items:stretch}
+.hero__img{position:relative;width:112%;max-width:none;height:auto;aspect-ratio:1307/816;margin:64px 0 0 -6%;object-fit:cover;-webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 100%);mask-image:linear-gradient(to bottom,#000 70%,transparent 100%)}
+.hero__shade{display:none}
+.hero__content{position:relative;width:100%;padding:0 var(--pad) 24px;margin-top:-30px;display:grid;gap:14px}
+.hero__big{margin:0;font-size:clamp(2.5rem,12.4vw,6rem);color:#fff;white-space:nowrap}
+.hero__title{margin:0;font-size:clamp(1.0625rem,4.6vw,1.625rem);font-weight:450;line-height:1.25;letter-spacing:-.01em;max-width:30ch;color:var(--on-card)}
+.hero__sub{margin:0;font-size:.9375rem;line-height:1.5;color:var(--on-card-muted);max-width:44ch}
+.hero .why{margin:0 0 10px;font-size:.9375rem}
+.hero .cta-row{margin-top:6px}
+.hero .cta-micro{color:var(--on-card-muted);margin:10px 0 0;font-size:.8125rem}
+.hero .btn{width:100%}
+.img-label{position:absolute;top:72px;right:12px;margin:0;font-size:.6875rem;font-stretch:110%;line-height:1;letter-spacing:.04em;color:#EDEBEB;background:rgba(26,24,24,.72);padding:6px 9px;border-radius:0;z-index:1}
+
+/* Barra técnica logo abaixo do Hero (ref. Lamborghini: valor grande + rótulo curto). Especificações do modelo anunciado. */
+.specbar{max-width:1240px;margin:0 auto;padding:28px var(--pad) 8px}
+.specbar__list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px;margin:0}
+.specbar__item{margin:0;display:flex;flex-direction:column;min-width:0;container-type:inline-size}
+.specbar__item dd{margin:0;font-size:clamp(1.625rem,7.4vw,2.75rem);font-stretch:125%;font-weight:250;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+/* Tamanho pela largura da coluna: o valor mais largo ("40 a 45 km") mede ~5,9em, então 16cqi sempre cabe. */
+@supports (font-size:1cqi){.specbar__item dd{font-size:clamp(1.25rem,16cqi,2.75rem)}}
+.specbar__item dt{order:2;margin-top:8px;font-size:.6875rem;font-weight:600;font-stretch:125%;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+.specbar__foot{margin:20px 0 0;font-size:.8125rem;color:var(--muted)}
+.specbar__pend{margin:8px 0 0;font-size:.8125rem}
+.specbar__pend span+span{margin-left:6px}
+
+/* ---------- Ticker: uma única faixa, fina e lenta ---------- */
+.ticker{position:relative;overflow:hidden;border-block:1px solid var(--line);margin-top:28px}
+.ticker__track{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.75rem;padding:16px var(--pad);font:300 clamp(1.125rem,4.6vw,1.75rem)/1.1 var(--font);font-stretch:125%;text-transform:uppercase;letter-spacing:.02em;color:var(--ink)}
+.ticker__group{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.75rem;margin:0;padding:0;list-style:none}
+.ticker__group li{white-space:nowrap}
+.ticker__dup{display:none}
+
+/* ---------- Motivos: três afirmações em colunas com fio superior (sem cards, sem ícones) ---------- */
+.motivos{display:none}
+.motivos__list{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;margin:0;padding:0;list-style:none}
+.motivos__list li{border-top:1px solid var(--ink);padding-top:20px}
+.motivos__list h3{font-size:clamp(1.375rem,2.4vw,1.875rem);font-weight:450;font-stretch:112%;line-height:1.15;letter-spacing:-.02em;margin:0 0 12px;max-width:18ch}
+.motivos__list p{color:var(--muted);margin:0;max-width:36ch}
+
+/* ---------- Produto ---------- */
+.product{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+.product>*,.two>*{min-width:0}
+.gallery{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;margin-inline:calc(var(--pad) * -1);padding-inline:var(--pad);scroll-padding-inline:var(--pad);scrollbar-width:thin}
+.gallery figure{flex:0 0 86%;margin:0;scroll-snap-align:start}
+.gallery img,.gallery .ph{width:100%;aspect-ratio:4/3;object-fit:contain;background:#F5F5F5;border-radius:0}
+.gallery figcaption{padding:10px 2px 0;font-size:.8125rem}
+.ph{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;background:var(--surface);border:1px dashed var(--line);border-radius:0;color:var(--muted);font-weight:600;text-align:center;padding:16px}
+.gallery .ph{background:var(--surface)}
+.price{margin:24px 0}
+.price__main{font-size:clamp(2rem,8vw,3.25rem);font-stretch:125%;font-weight:250;letter-spacing:-.035em;line-height:1.05;margin:0}
+.price__sub{margin:6px 0 0}
+.price__de{margin:0;color:var(--muted);text-decoration:line-through}
+.price__offer{background:var(--card);color:var(--on-card);padding:12px 16px;border-radius:0;margin:14px 0 0;font-size:.9375rem}
+.price__offer a{color:var(--on-card)}
+.price__offer[hidden],.price__de[hidden]{display:none}
+.colors{border:0;padding:0;margin:28px 0}
+.colors legend{padding:0}
+.colors__list{display:flex;flex-wrap:wrap;gap:8px}
+.color{position:relative}
+.color input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.color span{display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border:1px solid var(--line);border-radius:0;background:var(--raised);font-weight:500;font-size:.9375rem;min-height:44px;transition:border-color .2s var(--ease)}
+.color i{width:28px;height:28px;border-radius:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.24);flex:none}
+.color input:hover+span{border-color:var(--muted)}
+.color input:checked+span{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.color input:focus-visible+span{outline:2px solid var(--ink);outline-offset:3px}
+.c-branca{background:#fff}.c-azul{background:#1d4ed8}.c-vermelha{background:#c42a2a}.c-preta{background:#111}
+.c-preta-fosca{background:#3a3d40}
+.c-bandeira{background:linear-gradient(135deg,#009b3a 0 45%,#ffdf00 45% 70%,#002776 70%)}
+.colors .note{margin:12px 0 0}
+.specs{margin-top:8px}
+.specs summary{cursor:pointer;min-height:48px;display:flex;align-items:center;justify-content:space-between;list-style:none;border-top:1px solid var(--line)}
+.specs summary::-webkit-details-marker{display:none}
+.specs summary .label{margin:0}
+.specs summary::after{content:"+";font-size:1.25rem;font-weight:300;line-height:1}
+.specs[open] summary::after{content:"\2212"}
+/* Ficha em blocos (sem fio em cada linha): rótulo técnico + valor */
+.spec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px;margin:12px 0 0}
+.spec div{margin:0}
+.spec dt{font-size:.6875rem;font-weight:600;font-stretch:125%;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin:0 0 4px}
+.spec dd{margin:0;font-weight:500}
+
+/* ---------- Custo: duas colunas separadas por um fio vertical, sem cards ---------- */
+.compare{display:grid;grid-template-columns:minmax(0,1fr);margin:36px 0 24px;border-block:1px solid var(--line)}
+.compare__col{padding:24px 0}
+.compare__col+.compare__col{border-top:1px solid var(--line)}
+.compare__col h3{font-size:.75rem;font-weight:600;font-stretch:125%;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-bottom:14px}
+.compare__col p{margin:0 0 8px}
+
+/* ---------- Habilitação: quatro condições como ficha técnica ---------- */
+.conds{list-style:none;padding:0;margin:32px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:0;overflow:hidden}
+.conds li{background:var(--bg);padding:18px 16px 20px;display:flex;flex-direction:column;gap:8px;min-width:0;container-type:inline-size}
+.section--surface .conds li{background:var(--surface)}
+.conds__val{font-size:clamp(1.5rem,6.4vw,2.5rem);font-stretch:125%;font-weight:250;letter-spacing:-.03em;line-height:1;white-space:nowrap}
+@supports (font-size:1cqi){.conds__val{font-size:clamp(1.25rem,22cqi,2.5rem)}}
+.conds__txt{font-size:.875rem;line-height:1.45}
+.conds__st{font-size:.6875rem;font-weight:600;font-stretch:125%;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-top:auto}
+.conds .ok .conds__st{color:var(--accent)}
+.callout{background:var(--raised);border:1px solid var(--line);padding:18px 20px;border-radius:0;margin:24px 0;max-width:62ch}
+
+/* ---------- Listas de conferência: fio só entre itens ---------- */
+.rows{list-style:none;padding:0;margin:20px 0}
+.rows li{padding:14px 0}
+.rows li+li{border-top:1px solid var(--line)}
+.two{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+.mini-gallery{display:grid;gap:12px;grid-template-columns:1fr 1fr;margin:20px 0}
+.mini-gallery .ph{aspect-ratio:1;font-size:.8125rem}
+
+/* Passos: a única sequência numerada da página (é uma sequência real) */
+.steps{list-style:none;padding:0;counter-reset:s;margin:20px 0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;align-items:baseline;padding:16px 0}
+.steps li+li{border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);font-size:2rem;font-stretch:125%;font-weight:200;color:var(--accent);line-height:1}
+
+/* Primeira moto: painel de fatos */
+.panel{background:var(--surface);border-radius:0;padding:24px}
+.section--surface .panel{background:var(--raised)}
+.panel ul{list-style:none;padding:0;margin:0 0 20px}
+.panel li{padding:10px 0}
+.panel li+li{border-top:1px solid var(--line)}
+
+/* ---------- FAQ: fios entre perguntas, sem cards ---------- */
+.faq__list{border-top:1px solid var(--ink);margin-top:32px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details[hidden]{display:none}
+.faq summary{cursor:pointer;font-weight:500;font-size:1.0625rem;padding:20px 0;min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.5rem;font-weight:200;line-height:1;flex:none;transition:transform .3s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .ans{padding:0 0 20px;max-width:62ch;color:var(--muted)}
+.faq .ans p{margin:0}
+
+/* ---------- CTA final: cartão escuro, espelha o Hero ---------- */
+.cta-final{padding:8px}
+.cta-card{background:var(--card);color:var(--on-card);border:1px solid rgba(255,255,255,.1);border-radius:0;padding:clamp(48px,9vw,112px) var(--pad);position:relative;overflow:hidden}
+.cta-card .wrap{padding-inline:0}
+.cta-card h2{font-size:clamp(2rem,6.4vw,4.5rem);font-stretch:125%;font-weight:250;letter-spacing:-.03em;line-height:1;max-width:16ch;color:#fff}
+.inline-list{list-style:none;padding:0;margin:28px 0;display:flex;flex-wrap:wrap;gap:10px}
+.inline-list li{border:1px solid rgba(255,255,255,.22);border-radius:0;padding:8px 14px;font-size:.875rem}
+.cta-card p{color:var(--on-card-muted)}
+.cta-card p strong{color:var(--on-card)}
+
+/* ---------- Rodapé (claro, mesmo tema da página) ---------- */
+.footer{padding:56px 0 40px;font-size:.9375rem;color:var(--muted)}
+.footer h2{font-size:.75rem;font-weight:600;font-stretch:125%;text-transform:uppercase;letter-spacing:.09em;color:var(--ink);margin:0 0 14px;max-width:none}
+.footer .footer__brand{font-size:1.125rem;letter-spacing:.06em}
+.footer a{color:var(--ink)}
+.footer__grid{display:grid;gap:32px}
+.footer ul{list-style:none;padding:0;margin:0}
+.footer li{margin-bottom:6px}
+.footer p{margin:0 0 6px}
+.footer .legal{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;font-size:.8125rem}
+.linklike{background:none;border:0;padding:8px 0;min-height:44px;font:inherit;color:var(--ink);text-decoration:underline;cursor:pointer}
+
+/* ---------- Botão fixo WhatsApp (mobile: barra inferior) ---------- */
+.wa-fixed{position:fixed;z-index:var(--z-fixed);left:0;right:0;bottom:0;padding:10px var(--pad) max(10px,env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line)}
+.wa-fixed[hidden]{display:none}
+
+/* ---------- Consentimento ---------- */
+.consent{position:fixed;z-index:var(--z-dialog);left:8px;right:8px;bottom:8px;background:var(--raised);color:var(--ink);border:1px solid var(--line);border-radius:0;padding:16px;font-size:.875rem;box-shadow:0 4px 8px rgba(0,0,0,.4)}
+.consent[hidden]{display:none}
+.consent p{margin:0 0 12px}
+.consent__btns{display:flex;gap:10px}
+.consent__btns .btn{flex:1}
+
+/* ---------- Ordem no celular (estrutura.md seção 4). Reseta em >=768px. ---------- */
+main{display:flex;flex-direction:column}
+#hero{order:1}#ticker{order:2}#produto{order:3}#seguranca{order:4}#habilitacao{order:5}#custo{order:6}
+#primeira-moto{order:7}#autonomia{order:8}#prova-social{order:9}#pagamento{order:10}#manutencao{order:11}
+#faq{order:12}#cta-final{order:13}
+#motivos,#cobertura{order:14}
+@media (max-width:767.98px){#cobertura{display:none}}
+
+/* ================= Tablet / desktop ================= */
+@media (min-width:768px){
+  :root{--pad:32px}
+  body{padding-bottom:0}
+  main>*{order:0 !important}
+  .header-row{padding-left:10px}
+  .brand{font-size:.8125rem}
+  .btn--glass{font-size:.875rem;padding:8px 16px;gap:8px}
+  .offer-bar{font-size:.875rem}
+  .offer-bar__anchor{display:inline}
+
+  /* Hero: foto à direita com fade, tipografia à esquerda, bloco de ação embaixo à direita */
+  .hero{flex-direction:row;align-items:flex-end;min-height:min(calc(100svh - 16px - var(--offer-h)),900px)}
+  /* Foto no tamanho natural (sem esticar para cobrir a altura do cartão, o que ampliava e pixelava a imagem de 1024px);
+     as bordas se dissolvem no preto do cartão: esquerda (texto) e topo/base. */
+  .hero__img{position:absolute;top:50%;right:0;left:auto;bottom:auto;width:min(74%,1307px);height:auto;margin:0;aspect-ratio:1307/816;object-fit:contain;transform:translateY(-50%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%),linear-gradient(to bottom,transparent 0,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 30%),linear-gradient(to bottom,transparent 0,#000 14%,#000 86%,transparent 100%);-webkit-mask-composite:source-in;mask-composite:intersect}
+  .hero__shade{display:block;position:absolute;inset:0;background:
+    radial-gradient(ellipse 48% 62% at 80% 94%,rgba(26,24,24,.94) 0,rgba(26,24,24,.82) 45%,rgba(26,24,24,0) 100%),
+    linear-gradient(90deg,rgba(26,24,24,.94) 0,rgba(26,24,24,.84) 40%,rgba(26,24,24,0) 66%),
+    linear-gradient(to top,rgba(26,24,24,.7) 0,rgba(26,24,24,0) 38%)}
+  .hero__content{margin:0;padding:104px clamp(32px,5vw,72px) 48px;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);column-gap:48px;align-items:end;min-height:inherit}
+  .hero__l{align-self:center;display:grid;gap:24px}
+  .hero__r{align-self:end;justify-self:end;max-width:320px}
+  .hero__big{font-size:clamp(3.5rem,7.6vw,6rem)}
+  .hero__title{font-size:clamp(1.25rem,2vw,1.625rem);max-width:24ch}
+  .hero__sub{font-size:1rem;margin-bottom:22px}
+  .hero .btn{width:auto}
+  .img-label{top:auto;bottom:18px;left:clamp(32px,5vw,72px);right:auto}
+
+  .specbar{padding:40px var(--pad) 8px}
+  .specbar__list{gap:32px 0}
+  .specbar__item{padding:0 24px}
+  .specbar__item:nth-child(odd){padding-left:0}
+  .specbar__item:nth-child(even){border-left:1px solid var(--line)}
+
+  .motivos{display:block}
+  .motivos__list{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+  .product{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:start;gap:56px}
+  .product__media{position:sticky;top:96px}
+  .gallery{margin-inline:0;padding-inline:0}
+  .gallery figure{flex-basis:78%}
+  .compare{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .compare__col{padding:28px 32px 28px 0}
+  .compare__col+.compare__col{border-top:0;border-left:1px solid var(--line);padding-left:32px}
+  .conds{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .conds li{padding:24px 20px 26px}
+  .two{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:64px}
+  #cobertura{display:block}
+  .footer__grid{grid-template-columns:2fr 1fr 1fr}
+  .wa-fixed{left:auto;right:24px;bottom:24px;padding:0;background:none;border:0}
+  .wa-fixed .btn{box-shadow:0 4px 8px rgba(0,0,0,.5)}
+  .wa-fixed .btn--block{width:auto}
+  .consent{left:auto;right:24px;bottom:24px;max-width:420px}
+  .cta-card{padding-inline:clamp(32px,5vw,72px)}
+}
+@media (min-width:1024px){
+  :root{--pad:clamp(32px,5vw,72px)}
+}
+/* Menu em texto só quando cabe com a marca centralizada (colunas laterais iguais) */
+@media (min-width:1100px){
+  .nav{display:flex;gap:2px}
+  .menu-m{display:none}
+  .header-row{max-width:1040px;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
+  .brand{padding-inline:20px}
+}
+/* Barra técnica em 4 colunas só quando há largura para os números grandes */
+@media (min-width:1100px){
+  .specbar__list{grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+  .specbar__item:nth-child(odd){padding-left:24px}
+  .specbar__item:first-child{padding-left:0}
+  .specbar__item+.specbar__item{border-left:1px solid var(--line)}
+}
+@media (min-width:1024px){
+  .gallery figure{flex-basis:62%}
+}
+
+/* ================= Movimento =================
+   Regra: o padrão é visível. As revelações por rolagem usam animation-timeline (só onde há suporte);
+   sem suporte ou com movimento reduzido, tudo aparece normalmente. Nada anima a imagem do Hero (LCP). */
+@media (prefers-reduced-motion:no-preference){
+  .hero__content{animation:hero-in .9s var(--ease) both}
+  @keyframes hero-in{from{transform:translateY(14px)}to{transform:none}}
+
+  .ticker__track{flex-wrap:nowrap;justify-content:flex-start;width:max-content;gap:0;padding:18px 0;animation:tick 60s linear infinite}
+  .ticker__group{flex-wrap:nowrap;justify-content:flex-start;gap:1.75rem;padding-right:1.75rem;white-space:nowrap}
+  .ticker__dup{display:flex}
+  .ticker__group li::before{content:"/";margin-right:1.75rem;color:var(--muted);font-weight:200}
+  .ticker.is-paused .ticker__track,.ticker.is-offscreen .ticker__track,.ticker:hover .ticker__track{animation-play-state:paused}
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  @media (hover:hover){.gallery img{transition:transform .6s var(--ease)}.gallery figure:hover img{transform:scale(1.02)}}
+
+  @supports (animation-timeline:view()){
+    .reveal{view-timeline-name:--rv}
+    .reveal-word{display:inline-block;animation:word-in linear both;animation-timeline:--rv;animation-range:entry calc(var(--i) * 3%) entry calc(60% + var(--i) * 3%)}
+    @keyframes word-in{from{opacity:.14;filter:blur(5px);transform:translateY(.18em)}to{opacity:1;filter:none;transform:none}}
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+}
+
+/* Fotos da mini-galeria (bateria e carregador) */
+.mini-gallery .mg{margin:0}
+.mini-gallery .mg img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:0;background:var(--surface)}
+.mini-gallery .mg figcaption{font-size:.75rem;color:var(--muted);margin-top:8px}
+
+/* Header: animação de hover inspirada no padrão "Simple Floating Nav" (hover.dev), reimplementada em CSS.
+   Links: o texto rola para cima e revela uma cópia clara. Botão: um círculo claro sobe e preenche o fundo. */
+.nav a{color:var(--on-card-muted)}
+.nav a:hover{background:none}
+.roll{display:block;height:1.3em;line-height:1.3em;overflow:hidden}
+.roll>span{display:block;transition:transform .45s var(--ease)}
+.roll>span+span{color:#fff}
+.nav a:hover .roll>span,.nav a:focus-visible .roll>span{transform:translateY(-100%)}
+.btn--glass{position:relative;z-index:0;overflow:hidden;isolation:isolate;transition:transform .3s var(--ease),color .3s var(--ease) .08s,border-color .3s var(--ease)}
+.btn--glass::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:100%;background:var(--on-card);transform:translateY(200%) scale(2.5);transition:transform .8s var(--ease)}
+@media (hover:hover){
+  .btn--glass:hover{background:transparent;color:#1A1818;border-color:var(--on-card);transform:scale(1.04)}
+  .btn--glass:hover::before{transform:translateY(0) scale(2.5)}
+  .btn--glass:hover svg{color:#1E8E4E}
+  .btn--glass:active{transform:scale(1)}
+}
+.btn--glass:focus-visible{color:#1A1818;border-color:var(--on-card)}
+.btn--glass:focus-visible::before{transform:translateY(0) scale(2.5)}
+
+/* ================= Referência Lamborghini: títulos em caixa alta =================
+   Caixa alta pede tracking positivo (a referência usa ~0.023em) e largura menor que a dos números,
+   senão os títulos longos ficam largos demais no celular. */
+h1,h2,h3,.hero__big{text-transform:uppercase}
+h2{font-size:clamp(1.5rem,4.6vw,2.625rem);font-weight:400;font-stretch:108%;line-height:1.08;letter-spacing:.02em;max-width:24ch}
+h3{letter-spacing:.04em}
+.hero__big{letter-spacing:.01em}
+.hero__title{font-weight:400;letter-spacing:.02em;line-height:1.3}
+.motivos__list h3{font-weight:400;font-stretch:108%;letter-spacing:.02em;font-size:clamp(1.125rem,2vw,1.5rem)}
+.cta-card h2{font-size:clamp(1.75rem,5.4vw,3.75rem);font-stretch:112%;font-weight:300;letter-spacing:.01em;line-height:1.02;max-width:18ch}
+.footer h2{letter-spacing:.09em}
+/* Caixa alta é ~8em de largura em "NA TOMADA.": no celular a fonte acompanha a largura útil do cartão. */
+.hero__big{font-size:clamp(2rem,10.6vw,6rem)}
+@media (min-width:768px){.hero__big{font-size:clamp(3rem,6.4vw,6rem)}}
+/* Preço pela largura da coluna ("R$ 4.446,20" ~6,2em) */
+.price{container-type:inline-size}
+@supports (font-size:1cqi){.price__main{font-size:clamp(1.75rem,15cqi,3.25rem)}}
+
+/* ================= Vitrine do modelo (ref. vitrines de montadora, BMW) =================
+   Cartão preto de largura total: foto à direita com fade para o preto; à esquerda nome grande e fino,
+   frase curta, preço em destaque, letra miúda e dois botões (cheio + contorno). No celular a foto vai em cima. */
+#produto{padding-top:8px;padding-bottom:8px}
+.vitrine{position:relative;margin:0 8px;background:var(--card);color:var(--on-card);border:1px solid rgba(255,255,255,.08);overflow:hidden;display:flex;flex-direction:column}
+.vitrine__img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 50%;-webkit-mask-image:linear-gradient(to bottom,#000 65%,transparent 100%);mask-image:linear-gradient(to bottom,#000 65%,transparent 100%)}
+.vitrine__shade{display:none}
+.vitrine__label{top:12px;right:12px;bottom:auto;left:auto}
+.vitrine__content{position:relative;padding:0 var(--pad) 32px;margin-top:-40px;container-type:inline-size}
+.vitrine__kicker{margin:0 0 6px;font-size:1rem;font-weight:300;font-stretch:110%;color:var(--on-card)}
+.vitrine__title{margin:0;font-size:clamp(1.75rem,10.5cqi,4.25rem);font-weight:250;font-stretch:112%;letter-spacing:.01em;line-height:1;max-width:none;color:#fff;white-space:nowrap}
+.vitrine__tag{margin:12px 0 0;font-size:.9375rem;color:var(--on-card-muted)}
+.vitrine__price{margin:28px 0 12px}
+.vitrine__price .price__main{font-weight:600;font-stretch:105%;letter-spacing:0;color:#fff}
+.vitrine__price .price__main small{font-size:.42em;font-weight:500;letter-spacing:.02em;color:var(--on-card-muted)}
+.vitrine__price .price__sub{color:var(--on-card);font-size:1rem}
+.vitrine__legal{margin:0;font-size:.75rem;line-height:1.5;color:var(--on-card-muted);max-width:60ch}
+.vitrine__ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.vitrine__ctas .btn{flex:1 1 200px}
+.btn--outline{background:transparent;color:var(--on-card);border:1px solid rgba(255,255,255,.55)}
+.btn--outline:hover{background:rgba(255,255,255,.08);border-color:#fff}
+.on-card .btn--outline{background:transparent;color:var(--on-card);border-color:rgba(255,255,255,.55)}
+.on-card .btn--outline:hover{background:rgba(255,255,255,.08)}
+#ficha{scroll-margin-top:96px}
+/* 768-1199px: foto panorâmica inteira em cima e texto abaixo (sobreposta, a moto ficaria atrás do texto) */
+@media (min-width:768px) and (max-width:1199.98px){
+  .vitrine__img{aspect-ratio:1750/592;object-position:50% 50%;-webkit-mask-image:linear-gradient(to bottom,#000 75%,transparent 100%);mask-image:linear-gradient(to bottom,#000 75%,transparent 100%)}
+  .vitrine__content{padding:0 clamp(32px,5vw,72px) 48px;margin-top:-24px;max-width:720px}
+  .vitrine__ctas .btn{flex:0 0 auto}
+}
+@media (min-width:1200px){
+  .vitrine{flex-direction:row;align-items:center;min-height:min(560px,70vh)}
+  /* foto panorâmica cobre o cartão inteiro; a moto fica à direita e um degradê escuro só atrás do texto */
+  .vitrine__img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-position:78% 60%;-webkit-mask-image:none;mask-image:none}
+  .vitrine__shade{display:block;position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,14,14,.92) 0,rgba(14,14,14,.82) 30%,rgba(14,14,14,.35) 50%,rgba(14,14,14,0) 64%),linear-gradient(to top,rgba(14,14,14,.45) 0,rgba(14,14,14,0) 30%)}
+  .vitrine__content{margin:0;padding:clamp(40px,6vw,80px) clamp(32px,5vw,72px);width:min(52%,620px)}
+  .vitrine__ctas .btn{flex:0 0 auto}
+  .vitrine__label{top:auto;bottom:16px;right:16px;left:auto}
+}
+
+/* ================= Aparecimento ao rolar =================
+   Só age com .rv-on no <html> (posto pelo main.js com IntersectionObserver e movimento permitido).
+   Sobe 24px e aparece; irmãos em cascata de 70ms (até 6); fotos entram com leve zoom-out. */
+@media (prefers-reduced-motion:no-preference){
+  .rv-on .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--rv-i,0) * 70ms)}
+  .rv-on .rv-img{display:block;opacity:0;transform:scale(1.04);transition:opacity 1s var(--ease),transform 1.4s var(--ease)}
+  .rv-on .rv.is-in,.rv-on .rv-img.is-in{opacity:1;transform:none}
+}
+/* A imagem da vitrine é absoluta a partir de 1200px: o <picture> ocupa o cartão para continuar sendo a referência dela
+   mesmo quando ganha transform na animação de entrada. */
+@media (min-width:1200px){.vitrine picture{position:absolute;inset:0}}

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BSB Motos Elétricas | Moto elétrica na tomada, DF e entorno</title>
+<meta name="description" content="Moto elétrica que carrega na tomada de casa, com preço abaixo do mercado. Atendimento no DF e entorno. Fale com a BSB Motos Elétricas no WhatsApp.">
+<!-- PROTÓTIPO: REMOVER a linha robots abaixo ao publicar (página ainda tem [DADO] e foto provisória). Edição manual no deploy;
+     crawlers não executam JS de forma confiável, então isto e og:image/og:url devem ser editados direto no HTML. Ver "publicacao" em js/config.js. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#181818">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="BSB Motos Elétricas | Moto elétrica que carrega na tomada">
+<meta property="og:description" content="Moto elétrica que carrega na tomada de casa, com preço abaixo do mercado. DF e entorno.">
+<!-- [DADO: domínio a decidir] og:image precisa de URL absoluta (https://DOMINIO/img/...) e de FOTO REAL. [FOTO] A atual é imagem de IA de outro modelo (ilustrativa). -->
+<meta property="og:image" content="img/hero-moto-1307.webp">
+<meta property="og:image:alt" content="Imagem ilustrativa: moto elétrica em tom vinho metálico, vista de frente">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231A1B1D'/%3E%3Cpath d='M18 4 8 18h7l-1 10 10-14h-7z' fill='%238E2A2E'/%3E%3C/svg%3E">
+<link rel="preload" as="image" type="image/webp" href="img/hero-moto-1307.webp" imagesrcset="img/hero-moto-640.webp 640w, img/hero-moto-1024.webp 1024w, img/hero-moto-1307.webp 1307w" imagesizes="(min-width:768px) 74vw, 100vw" fetchpriority="high">
+<!-- PIXEL: inserir ID (Google Ads, [DADO: ID de conversão]). Configurar em js/config.js (ads.id / ads.label).
+     NÃO carregar a tag antes do consentimento (LGPD). Sem ID hoje: nenhuma tag é carregada. -->
+<link rel="preload" href="fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=20261027">
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.200-.4.700-1.300.1-.2 0-.3 0-.5l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.200c0 1.300.9 2.600 1 2.800.1.200 1.800 2.800 4.400 3.900 1.600.7 2.200.7 3 .6.500-.1 1.500-.6 1.700-1.200.2-.6.200-1.100.1-1.200l-.5-.3z"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0zM12 17v5"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 12V3h9l9 9-9 9zM7.500 7.500h.01"/></symbol>
+  <symbol id="i-bat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 7h15v10H3zM21 10v4M10 9l-2 3h4l-2 3"/></symbol>
+</svg>
+
+<!-- 1.1 Faixa OFERTAS EXCLUSIVAS: oculta por padrão. main.js só mostra com oferta.texto + validade futura + condicoes (js/config.js). Hoje: oculta (briefing: n/a). -->
+<div class="offer-bar" data-oferta hidden>
+  <span class="offer-bar__label">Ofertas exclusivas</span>
+  <a data-wa="padrao" data-pos="faixa" href="https://wa.me/?text=Ol%C3%A1!%20Vi%20o%20site%20da%20BSB%20Motos%20El%C3%A9tricas%20e%20tenho%20interesse%20na%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX.%20Ainda%20n%C3%A3o%20escolhi%20a%20cor.%20Quais%20cores%20est%C3%A3o%20dispon%C3%ADveis%20hoje%3F" target="_blank" rel="noopener"><span data-oferta-texto></span> &middot; válida até <span data-oferta-validade></span></a>
+  <a href="#pagamento">Ver condições</a>
+  <span class="offer-bar__anchor">Preço abaixo do mercado, todo dia. A oferta é um extra.</span>
+</div>
+
+<!-- 1.0 Header em cápsula flutuante: menu à esquerda, marca ao centro, WhatsApp à direita. [DADO: logo ausente] fallback em texto -->
+<header class="site-header" id="topo">
+  <div class="header-row">
+    <div class="header-l">
+      <details class="menu-m">
+        <summary aria-label="Abrir menu"><span class="burger"></span></summary>
+        <nav aria-label="Menu de seções">
+          <a href="#produto">Moto</a>
+          <a href="#custo">Custo</a>
+          <a href="#faq">Dúvidas</a>
+          <a href="#seguranca">Como comprar</a>
+        </nav>
+      </details>
+      <nav class="nav" aria-label="Seções da página">
+        <a href="#produto"><span class="roll"><span>Moto</span><span aria-hidden="true">Moto</span></span></a>
+        <a href="#custo"><span class="roll"><span>Custo</span><span aria-hidden="true">Custo</span></span></a>
+        <a href="#faq"><span class="roll"><span>Dúvidas</span><span aria-hidden="true">Dúvidas</span></span></a>
+        <a href="#seguranca"><span class="roll"><span>Como comprar</span><span aria-hidden="true">Como comprar</span></span></a>
+      </nav>
+    </div>
+    <a class="brand" href="#topo" aria-label="BSB Motos Elétricas, início">BSB Motos Elétricas</a>
+    <a class="btn btn--glass" data-wa="padrao" data-pos="header" href="https://wa.me/?text=Ol%C3%A1!%20Vi%20o%20site%20da%20BSB%20Motos%20El%C3%A9tricas%20e%20tenho%20interesse%20na%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX.%20Ainda%20n%C3%A3o%20escolhi%20a%20cor.%20Quais%20cores%20est%C3%A3o%20dispon%C3%ADveis%20hoje%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- 2.1 HERO (cartão editorial, foto como fundo). PENDENTE [FOTO]: o Hero usa imagem gerada por IA, a partir de moto real (só mudou o ângulo),
+     de OUTRO modelo (NÃO é o das especificações do briefing: 1000 W / 32 km/h / 40-45 km). Trocar por foto real do modelo anunciado
+     ou cadastrar os dados deste modelo antes de publicar. Por isso o Hero não cita especificação, preço nem cor; o rótulo "Imagem ilustrativa" fica visível. -->
+<section id="hero" aria-labelledby="hero-titulo">
+  <div class="hero">
+    <img class="hero__img" src="img/hero-moto-1307.webp" srcset="img/hero-moto-640.webp 640w, img/hero-moto-1024.webp 1024w, img/hero-moto-1307.webp 1307w" sizes="(min-width:768px) 74vw, 100vw" width="1307" height="816" fetchpriority="high" alt="Imagem ilustrativa: moto elétrica em tom vinho metálico, vista de frente, sobre fundo grafite">
+    <div class="hero__shade" aria-hidden="true"></div>
+    <p class="img-label">Imagem ilustrativa</p>
+    <div class="hero__content">
+      <div class="hero__l">
+        <p class="hero__big display" aria-hidden="true">Na tomada.</p>
+        <h1 id="hero-titulo" class="hero__title">Moto elétrica que carrega na tomada de casa, com preço abaixo do mercado</h1>
+      </div>
+      <div class="hero__r">
+        <p class="hero__sub">Para ir ao trabalho e passear no DF e entorno. Fale com a BSB Motos Elétricas no WhatsApp.</p>
+        <div class="cta-row">
+          <p class="why" data-oferta hidden><strong data-oferta-texto></strong> até <span data-oferta-validade></span>.</p>
+          <a class="btn btn--light" data-wa="padrao" data-pos="hero" href="https://wa.me/?text=Ol%C3%A1!%20Vi%20o%20site%20da%20BSB%20Motos%20El%C3%A9tricas%20e%20tenho%20interesse%20na%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX.%20Ainda%20n%C3%A3o%20escolhi%20a%20cor.%20Quais%20cores%20est%C3%A3o%20dispon%C3%ADveis%20hoje%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+          <p class="cta-micro">Consulte a disponibilidade da sua cor. Sem compromisso.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Faixa de fatos (bullets do copy.md). Fora do cartão de propósito: a foto do Hero não é o modelo destas especificações. -->
+  <div class="specbar">
+    <div role="group" aria-label="Especificações do modelo anunciado">
+    <dl class="specbar__list">
+      <div class="specbar__item"><dt>Autonomia por carga (aprox.)</dt><dd>40 a 45 km</dd></div>
+      <div class="specbar__item"><dt>Velocidade máxima</dt><dd>32 km/h</dd></div>
+      <div class="specbar__item"><dt>Motor</dt><dd>1000 W</dd></div>
+      <div class="specbar__item"><dt>Recarga em tomada comum (aprox.)</dt><dd>6 a 8 h</dd></div>
+    </dl>
+    </div>
+    <p class="specbar__foot">Especificações do modelo anunciado. Bateria de lítio removível e carregador bivolt. A foto acima é ilustrativa.</p>
+    <!-- PENDENTE [DADO]: linha de confiança (CNPJ, nota fiscal) e horário de atendimento -->
+    <p class="specbar__pend">Compra com nota fiscal. CNPJ <span class="pendente">[DADO]</span>. Atendimento de segunda a sexta, das 9h às 18h.</p>
+  </div>
+</section>
+
+<!-- Ticker de fatos do briefing (referência 3). Sem urgência, sem oferta. -->
+<section id="ticker" class="ticker" aria-label="Resumo: recarga em tomada comum, bateria removível, carregador bivolt, preço abaixo do mercado, atendimento no DF e entorno">
+  <div class="ticker__track">
+    <ul class="ticker__group" aria-hidden="true"><li>Tomada comum</li><li>Bateria removível</li><li>Carregador bivolt</li><li>Preço abaixo do mercado</li><li>DF e entorno</li></ul>
+    <ul class="ticker__group ticker__dup" aria-hidden="true"><li>Tomada comum</li><li>Bateria removível</li><li>Carregador bivolt</li><li>Preço abaixo do mercado</li><li>DF e entorno</li></ul>
+  </div>
+</section>
+
+<!-- 2.2 FAIXA DE MOTIVOS (no mobile fica fundida ao Hero/ticker) -->
+<section id="motivos" class="section motivos" aria-labelledby="motivos-titulo">
+  <div class="wrap">
+    <h2 class="sr-only" id="motivos-titulo">Por que escolher a BSB Motos Elétricas</h2>
+    <ul class="motivos__list">
+      <li class="reveal-up">
+        <h3>Seu posto é a tomada.</h3>
+        <p>Você carrega em casa ou no trabalho. Sem fila de posto, sem conta de gasolina.</p>
+      </li>
+      <li class="reveal-up">
+        <h3>Preço abaixo do mercado.</h3>
+        <p>É o nosso diferencial. O preço está aqui na página, sem letra miúda.</p>
+      </li>
+      <li class="reveal-up">
+        <h3>Tira a bateria e leva para carregar.</h3>
+        <p>Bateria de lítio removível e carregador bivolt. Onde tiver tomada, você carrega.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 2.3 PRODUTO -->
+<section id="produto" class="section section--surface" aria-labelledby="produto-titulo">
+  <!-- Vitrine do modelo: banner no estilo das vitrines de montadora (ref. BMW): nome grande, frase curta, preço em destaque,
+       letra miúda e dois botões; foto à direita (no celular, em cima). Imagem ilustrativa gerada por IA [FOTO]. -->
+  <div class="vitrine on-card">
+    <!-- [FOTO] Imagem ilustrativa (provavelmente gerada por IA); não confirmada como o X12 MAX. Original: docs/lp/assets/fotos-motos/vitrine-moto-rua.jpg -->
+    <picture>
+      <source media="(min-width:768px)" srcset="img/vitrine-1200.webp 1200w, img/vitrine-1750.webp 1750w" sizes="100vw" width="1750" height="592">
+      <img class="vitrine__img" src="img/vitrine-m-720.webp" width="720" height="540" loading="lazy" decoding="async" alt="Moto elétrica branca estacionada numa vaga de rua, com luz de fim de tarde (imagem ilustrativa)">
+    </picture>
+    <div class="vitrine__shade" aria-hidden="true"></div>
+    <p class="img-label vitrine__label">Imagem ilustrativa</p>
+    <div class="vitrine__content">
+      <p class="vitrine__kicker">Moto elétrica</p>
+      <h2 id="produto-titulo" class="vitrine__title"><span data-modelo>FOSTON X12 MAX</span></h2>
+      <p class="vitrine__tag">Carrega na tomada de casa.</p>
+      <div class="price vitrine__price">
+        <!-- Preço "de": oculto sem preço anterior realmente praticado e período documentado [CONFIRMAR com o responsável]. Preencha preco.de em js/config.js. -->
+        <p class="price__de" hidden>De R$ <span data-preco-de></span></p>
+        <p class="price__main"><span class="nowrap">R$&nbsp;<span data-preco-avista>4.446,20</span></span> <small class="nowrap">à vista</small></p>
+        <p class="price__sub">ou <span class="nowrap" data-preco-parcelado>10x de R$ 444,62</span></p>
+        <p class="price__offer" data-oferta hidden><strong data-oferta-texto></strong> &middot; válida até <span data-oferta-validade></span>. <a href="#pagamento">Ver condições</a></p>
+      </div>
+      <p class="vitrine__legal">Preço abaixo do mercado. Parcelamento em 10x de R$ 444,62 <span class="pendente">[CONFIRMAR: em qual meio de pagamento]</span>. Formas de pagamento: Pix, cartão e boleto. Cores: branca, azul, vermelha, preta, preta fosca e Bandeira, sujeitas à confirmação de estoque. Especificações do modelo anunciado; imagens ilustrativas.</p>
+      <div class="vitrine__ctas">
+        <a class="btn" data-wa="padrao" data-pos="vitrine" href="https://wa.me/?text=Ol%C3%A1!%20Vi%20o%20site%20da%20BSB%20Motos%20El%C3%A9tricas%20e%20tenho%20interesse%20na%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX.%20Ainda%20n%C3%A3o%20escolhi%20a%20cor.%20Quais%20cores%20est%C3%A3o%20dispon%C3%ADveis%20hoje%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+        <a class="btn btn--outline" href="#seguranca">Como comprar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2.4 CUSTO -->
+<section id="custo" class="section" aria-labelledby="custo-titulo">
+  <div class="wrap">
+    <h2 id="custo-titulo" data-reveal>Quanto custa rodar na tomada, em vez de na gasolina</h2>
+    <div class="prose reveal-up">
+      <p>Com a moto elétrica, você não abastece no posto. Você liga o carregador numa tomada comum e deixa carregar de 6 a 8 horas (aprox.), à noite em casa ou durante o expediente.</p>
+      <p>O custo de cada carga depende de dois números: o tamanho da bateria e a sua tarifa de energia, em R$ por kWh (ela aparece na conta de luz). Diga no WhatsApp quanto você paga por kWh, ou só a sua cidade, e a gente calcula com você. <span class="pendente">[CONFIRMAR: a loja faz esse cálculo no atendimento]</span></p>
+    </div>
+    <!-- PENDENTE [DADO]: sem capacidade da bateria, tarifa e gasolina de referência não há cálculo. Não estimar. -->
+    <div class="compare reveal-up" role="group" aria-label="Comparação de custo, dados pendentes">
+      <div class="compare__col">
+        <h3>Na tomada (elétrica)</h3>
+        <p>Custo por carga completa: R$ <span class="pendente">[CÁLCULO: DADO]</span></p>
+        <p>Custo por km: R$ <span class="pendente">[CÁLCULO: DADO]</span></p>
+      </div>
+      <div class="compare__col">
+        <h3>No posto (gasolina)</h3>
+        <p>Custo por km na gasolina (moto de referência): R$ <span class="pendente">[CÁLCULO: DADO]</span></p>
+      </div>
+    </div>
+    <p class="note">Insumos necessários: capacidade da bateria <span class="pendente">[DADO: Wh/Ah]</span> &middot; tarifa de energia de referência no DF <span class="pendente">[DADO: R$/kWh, fonte, data]</span> &middot; preço da gasolina <span class="pendente">[DADO: R$/L, fonte, data]</span> &middot; consumo da moto a gasolina de referência <span class="pendente">[DADO: km/L, fonte]</span>.</p>
+    <p class="note">Cálculo com <span class="pendente">[DADO: fonte e data da tarifa e do preço da gasolina]</span>. Valores reais variam com o uso.</p>
+    <div class="cta-row">
+      <a class="btn" data-wa="padrao" data-pos="custo" href="https://wa.me/?text=Ol%C3%A1!%20Vi%20o%20site%20da%20BSB%20Motos%20El%C3%A9tricas%20e%20tenho%20interesse%20na%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX.%20Ainda%20n%C3%A3o%20escolhi%20a%20cor.%20Quais%20cores%20est%C3%A3o%20dispon%C3%ADveis%20hoje%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+      <p class="cta-micro">Faça a conta com a sua tarifa de energia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2.5 HABILITAÇÃO (condicional: dimensões não confirmadas, sem promessa de "sem habilitação") -->
+<!-- Quando largura e entre-eixos forem confirmados, trocar o título por: "Preciso de carteira? Não, se for autopropelido. E este modelo é." [CONFIRMAR antes de usar]. Revisão jurídica antes de publicar. -->
+<section id="habilitacao" class="section section--surface" aria-labelledby="hab-titulo">
+  <div class="wrap">
+    <p class="label label--accent">Habilitação</p>
+    <h2 id="hab-titulo">Preciso de carteira? Depende de 4 medidas. Veja quais já estão confirmadas.</h2>
+    <p class="lead">No Brasil, a moto elétrica pode ser pilotada sem habilitação quando se enquadra como autopropelido. Para isso, ela precisa cumprir as 4 condições abaixo, todas juntas.</p>
+    <ul class="conds reveal-up">
+      <li class="ok"><span class="conds__val">1000 W</span><span class="conds__txt">Motor de até 1000 W: este modelo tem 1000 W.</span><span class="conds__st">Confirmado</span></li>
+      <li class="ok"><span class="conds__val">32 km/h</span><span class="conds__txt">Velocidade máxima de fabricação de 32 km/h: este modelo faz 32 km/h.</span><span class="conds__st">Confirmado</span></li>
+      <li><span class="conds__val">70 cm</span><span class="conds__txt">Largura de até 70 cm: <span class="pendente">[CONFIRMAR medida do modelo]</span></span><span class="conds__st">A confirmar</span></li>
+      <li><span class="conds__val">130 cm</span><span class="conds__txt">Distância entre eixos de até 130 cm: <span class="pendente">[CONFIRMAR medida do modelo]</span></span><span class="conds__st">A confirmar</span></li>
+    </ul>
+    <p class="callout"><strong>Se o modelo for classificado como ciclomotor, você precisa de ACC ou CNH categoria A.</strong> <span class="pendente">[CONFIRMAR: classificação final do modelo]</span></p>
+    <p>Registro, emplacamento e documentação: <span class="pendente">[DADO]</span>.</p>
+    <div class="cta-row">
+      <a class="btn" data-wa="habilitacao" data-pos="habilitacao" href="https://wa.me/?text=Ol%C3%A1!%20Tenho%20interesse%20na%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX%20e%20quero%20confirmar%3A%20preciso%20de%20habilita%C3%A7%C3%A3o%20para%20pilotar%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Tirar minha dúvida no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2.6 AUTONOMIA E RECARGA -->
+<section id="autonomia" class="section" aria-labelledby="auto-titulo">
+  <div class="wrap two">
+    <div class="prose">
+      <h2 id="auto-titulo">40 a 45 km por carga (aprox.). Some a ida e a volta e veja se cabe.</h2>
+      <p>A autonomia é de 40 a 45 km por carga (aprox.). Para saber se cabe no seu dia, some a ida e a volta do seu trajeto mais longo.</p>
+      <p>Cabe com folga? Ótimo. Ficou no limite? Carregue no trabalho: a bateria de lítio sai da moto e vai com você.</p>
+      <p>A recarga leva de 6 a 8 horas (aprox.). O carregador é bivolt (100 a 240 V) e funciona em tomada comum.</p>
+      <p><strong>Para quem ela foi feita:</strong> trajetos do dia a dia dentro da cidade. Ir ao trabalho, à faculdade, ao mercado, passear no fim de semana. Funciona bem em cidades menores do entorno e nos deslocamentos dentro da sua região administrativa.</p>
+      <p><strong>Quando ela não é a escolha certa:</strong> se você faz todo dia um trajeto longo entre cidades, que passa da autonomia somando ida e volta, e não tem onde carregar no meio do caminho. Nesse caso, conte o seu trajeto no WhatsApp antes de decidir.</p>
+    </div>
+    <div>
+      <h3 class="label">Exemplos de trajeto</h3>
+      <ul class="rows">
+        <li><span class="pendente">[DADO: trajeto 1, dentro de uma cidade-satélite, ida e volta em km]</span></li>
+        <li><span class="pendente">[DADO: trajeto 2, cidade do entorno até o centro dela, ida e volta em km]</span></li>
+        <li><span class="pendente">[DADO: trajeto 3, cidade-satélite até o Plano Piloto, ida e volta em km, com aviso se passar da autonomia]</span></li>
+      </ul>
+      <div class="mini-gallery">
+        <!-- [FOTO] Imagem ilustrativa (provavelmente gerada por IA), recortada para remover a marca NIU de terceiros. O rótulo da bateria mostra "EV VOLT 72V 60Ah": [CONFIRMAR] não é especificação do modelo anunciado; trocar por foto real da bateria do modelo. -->
+        <figure class="mg"><img src="img/mao-bateria-560.webp" width="560" height="560" loading="lazy" decoding="async" alt="Mão com luva retirando a bateria de lítio de dentro do banco de uma scooter elétrica (imagem ilustrativa)"><figcaption>Imagem ilustrativa</figcaption></figure>
+        <!-- [FOTO] Imagem ilustrativa de outro modelo (scooter amarela). Trocar por foto real do carregador do modelo anunciado. -->
+        <figure class="mg"><img src="img/carregador-tomada-560.webp" width="560" height="560" loading="lazy" decoding="async" alt="Carregador ligado em tomada comum de parede, conectado a uma scooter elétrica (imagem ilustrativa)"><figcaption>Imagem ilustrativa</figcaption></figure>
+      </div>
+      <p class="note">A bateria sai da moto. Você carrega onde tiver tomada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2.7 SEGURANÇA DE COMPRA. Usado o título alternativo "Como comprar ... sem medo de golpe". O título "Você vê, confere e só depois paga" só entra com [CONFIRMAR] da política real de pagamento. -->
+<section id="seguranca" class="section section--surface" aria-labelledby="seg-titulo">
+  <div class="wrap two">
+    <div class="prose">
+      <p class="label label--accent">Como comprar</p>
+      <h2 id="seg-titulo">Como comprar da BSB Motos Elétricas sem medo de golpe</h2>
+      <p>Golpe de moto pela internet existe. Você está certo em desconfiar. Por isso, aqui está tudo o que você pode checar antes de pagar qualquer valor.</p>
+      <h3 class="label">O que você pode conferir</h3>
+      <!-- PENDENTE [DADO]: exibir só os itens reais. Briefing: sem showroom/endereço hoje. -->
+      <ul class="rows">
+        <li>Razão social: <span class="pendente">[DADO]</span> &middot; CNPJ: <span class="pendente">[DADO]</span> (consulte na Receita Federal)</li>
+        <li>Nota fiscal em toda compra.</li>
+        <li>Garantia por escrito: <span class="pendente">[DADO]</span></li>
+        <li>Formas de pagamento: Pix, cartão e boleto.</li>
+        <!-- 24h: frase do cliente mantida; condição pendente (ver marcador). Outras menções abaixo: passo 4, Cobertura e FAQ. -->
+        <li>Prazo: pague e receba em 24h. <span class="pendente">[CONFIRMAR: 24h contadas a partir de quando? valem em quais cidades e formas de pagamento?]</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="label">Como funciona a compra</h3>
+      <ol class="steps">
+        <li class="reveal-up"><div><strong>Você chama no WhatsApp.</strong> Diz o modelo e a cor que quer.</div></li>
+        <li class="reveal-up"><div><strong>A gente confirma o estoque.</strong> Você recebe fotos e vídeo da moto real, na cor escolhida, antes de comprar.</div></li>
+        <li class="reveal-up"><div><strong>Você paga.</strong> Pix, cartão ou boleto.</div></li>
+        <!-- 24h: ver [CONFIRMAR] na lista "O que você pode conferir" -->
+        <li class="reveal-up"><div><strong>Você recebe em 24h.</strong> Cidades atendidas: <span class="pendente">[DADO]</span></div></li>
+        <li class="reveal-up"><div><strong>Documentos na mão.</strong> Nota fiscal e termo de garantia <span class="pendente">[DADO: garantia]</span>.</div></li>
+      </ol>
+      <div class="mini-gallery">
+        <div class="ph" role="img" aria-label="Espaço reservado para foto da equipe"><span class="pendente">[FOTO: equipe real]</span></div>
+        <div class="ph" role="img" aria-label="Espaço reservado para foto de entrega a cliente"><span class="pendente">[FOTO: entrega real a cliente, com autorização]</span></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn" data-wa="padrao" data-pos="seguranca" href="https://wa.me/?text=Ol%C3%A1!%20Vi%20o%20site%20da%20BSB%20Motos%20El%C3%A9tricas%20e%20tenho%20interesse%20na%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX.%20Ainda%20n%C3%A3o%20escolhi%20a%20cor.%20Quais%20cores%20est%C3%A3o%20dispon%C3%ADveis%20hoje%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+        <p class="cta-micro">Pergunte o que quiser antes de decidir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2.8 PROVA SOCIAL: OCULTA. Sem prova real, não publicar. Para ativar: preencher com dados reais e remover o atributo hidden. -->
+<section id="prova-social" class="section" aria-labelledby="prova-titulo" hidden>
+  <div class="wrap">
+    <h2 id="prova-titulo">Quem já pilota uma BSB pelo DF e entorno</h2>
+    <ul>
+      <li><span class="pendente">[DEPOIMENTO REAL]</span> nome, cidade, foto, autorização. Preferência: alguém que nunca tinha pilotado moto.</li>
+      <li><span class="pendente">[DEPOIMENTO REAL]</span> nome, cidade, foto, autorização. Preferência: alguém que tinha medo de golpe.</li>
+      <li><span class="pendente">[DEPOIMENTO REAL]</span> nome, cidade, foto, autorização. Preferência: alguém que usa para trabalhar.</li>
+    </ul>
+    <p><span class="pendente">[DADO: nº de motos vendidas]</span> &middot; <span class="pendente">[DADO: nota Google e nº de avaliações, com link]</span></p>
+    <p><span class="pendente">[FOTO: cliente real com a moto, com autorização]</span></p>
+  </div>
+</section>
+
+<!-- 2.9 PRIMEIRA MOTO. Título seguro usado (sem "muita gente", que não tem base). -->
+<section id="primeira-moto" class="section" aria-labelledby="primeira-titulo">
+  <div class="wrap two">
+    <div class="prose">
+      <h2 id="primeira-titulo" data-reveal>Nunca pilotou moto? Comece devagar, a 32 km/h no máximo.</h2>
+      <p>É normal ter receio na primeira moto. A velocidade máxima desta é de 32 km/h, ritmo de bicicleta rápida no trânsito da cidade. Você não precisa correr para chegar.</p>
+      <p><strong>Apoio da loja:</strong> <span class="pendente">[DADO: ex. orientação na entrega, primeira volta acompanhada, dicas de segurança]</span></p>
+      <p><strong>Segurança:</strong> Use capacete e conheça as regras de circulação para o seu tipo de veículo. <span class="pendente">[CONFIRMAR regras e equipamentos obrigatórios conforme a classificação do modelo]</span></p>
+    </div>
+    <div>
+      <div class="panel"><h3 class="label">Fatos que ajudam</h3>
+      <ul>
+        <li>Velocidade máxima de 32 km/h.</li>
+        <li>Câmbio: <span class="pendente">[DADO: ex. sem marchas / acelerador de punho]</span></li>
+        <li>Peso: <span class="pendente">[DADO]</span></li>
+        <li>Altura do banco: <span class="pendente">[DADO]</span></li>
+        <li>Freios: <span class="pendente">[DADO]</span></li>
+      </ul>
+      </div>
+      <div class="ph ph--gap" role="img" aria-label="Espaço reservado para foto ou vídeo de iniciante pilotando"><span class="pendente">[FOTO/VÍDEO: pessoa iniciante dando a primeira volta, com autorização]</span></div>
+      <div class="cta-row">
+        <a class="btn" data-wa="padrao" data-pos="primeira-moto" href="https://wa.me/?text=Ol%C3%A1!%20Vi%20o%20site%20da%20BSB%20Motos%20El%C3%A9tricas%20e%20tenho%20interesse%20na%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX.%20Ainda%20n%C3%A3o%20escolhi%20a%20cor.%20Quais%20cores%20est%C3%A3o%20dispon%C3%ADveis%20hoje%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+        <p class="cta-micro">Conte que é sua primeira moto e tire suas dúvidas antes de comprar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2.10 PAGAMENTO E FINANCIAMENTO -->
+<section id="pagamento" class="section section--surface" aria-labelledby="pag-titulo">
+  <div class="wrap prose">
+    <h2 id="pag-titulo">Como pagar a sua moto elétrica</h2>
+    <ul class="rows">
+      <li>À vista: <span class="nowrap">R$&nbsp;<span data-preco-avista>4.446,20</span></span></li>
+      <li>Parcelado: <span class="nowrap" data-preco-parcelado>10x de R$ 444,62</span> <span class="pendente">[CONFIRMAR: em qual meio de pagamento]</span></li>
+      <li>Formas de pagamento: Pix, cartão e boleto.</li>
+      <li>Financiamento: <span class="pendente">[DADO: bancos, aprovação, prazo. Se não houver, remover este item]</span></li>
+      <li>Emplacamento e documentação: <span class="pendente">[DADO: incluso ou não, e custo]</span></li>
+      <li data-oferta hidden>Oferta: <strong data-oferta-texto></strong> &middot; válida até <span data-oferta-validade></span> &middot; Regras: <span data-oferta-condicoes></span></li>
+    </ul>
+    <div class="cta-row">
+      <a class="btn" data-wa="pagamento" data-pos="pagamento" href="https://wa.me/?text=Ol%C3%A1!%20Quero%20simular%20o%20pagamento%20da%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX.%20Quais%20as%20op%C3%A7%C3%B5es%20%C3%A0%20vista%20e%20parcelado%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Simular no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2.11 MANUTENÇÃO E GARANTIA -->
+<section id="manutencao" class="section" aria-labelledby="man-titulo">
+  <div class="wrap prose">
+    <h2 id="man-titulo">E se der problema?</h2>
+    <ul class="rows">
+      <li>Garantia: <span class="pendente">[DADO: prazo e cobertura da moto]</span> &middot; Motor: <span class="pendente">[DADO]</span> &middot; Bateria de lítio: <span class="pendente">[DADO]</span></li>
+      <li>Manutenção: <span class="pendente">[DADO: onde, quanto custa, a cada quanto tempo]</span></li>
+      <li>Peças e assistência no DF e entorno: <span class="pendente">[DADO]</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 2.12 COBERTURA E ENTREGA (no mobile vira item do FAQ; seção oculta só no mobile) -->
+<section id="cobertura" class="section section--surface" aria-labelledby="cob-titulo">
+  <div class="wrap prose">
+    <h2 id="cob-titulo">Vocês atendem a minha cidade?</h2>
+    <p>Atendemos o DF e o entorno. Cidades atendidas: <span class="pendente">[DADO: lista]</span></p>
+    <!-- 24h: ver [CONFIRMAR] na seção Como comprar (condição pendente) -->
+    <p>Prazo: pague e receba em 24h. Forma de entrega: <span class="pendente">[DADO]</span></p>
+    <!-- Sem endereço, sem mapa. -->
+    <div class="cta-row">
+      <a class="btn" data-wa="cobertura" data-pos="cobertura" href="https://wa.me/?text=Ol%C3%A1!%20Moro%20em%20%5Bsua%20cidade%5D%20e%20tenho%20interesse%20na%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX.%20Voc%C3%AAs%20entregam%20aqui%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Confirmar entrega na minha cidade</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2.13 FAQ -->
+<section id="faq" class="section faq" aria-labelledby="faq-titulo">
+  <div class="wrap prose">
+    <p class="label label--accent">Dúvidas</p>
+    <h2 id="faq-titulo">Perguntas frequentes</h2>
+    <div class="faq__list">
+    <details><summary>Preciso de habilitação?</summary><div class="ans"><p>Depende do enquadramento. Sem habilitação, só se o modelo for autopropelido: até 1000 W, 32 km/h, largura até 70 cm e entre-eixos até 130 cm. Potência e velocidade já cumprem. Largura e entre-eixos: <span class="pendente">[CONFIRMAR]</span>. Se for ciclomotor, é preciso ACC ou CNH categoria A. Veja a seção <a href="#habilitacao">"Preciso de carteira?"</a>.</p></div></details>
+    <details><summary>Tomada comum serve? Quanto tempo carrega?</summary><div class="ans"><p>Serve. O carregador é bivolt (100 a 240 V). A carga leva de 6 a 8 horas (aprox.).</p></div></details>
+    <details><summary>Qual a autonomia real?</summary><div class="ans"><p>40 a 45 km por carga (aprox.). Varia com peso, subidas e jeito de pilotar. Some ida e volta do seu trajeto e compare.</p></div></details>
+    <!-- 24h (esta resposta e a de entrega): ver [CONFIRMAR] na seção Como comprar -->
+    <details><summary>Como sei que não é golpe?</summary><div class="ans"><p>Confira os dados da empresa antes de pagar: CNPJ <span class="pendente">[DADO]</span>, nota fiscal (toda compra tem) e garantia por escrito <span class="pendente">[DADO]</span>. Antes de comprar, a loja envia fotos e vídeo da moto real na cor que você escolheu. Depois, é só pagar e receber em 24h.</p></div></details>
+    <details><summary>Nunca pilotei. Consigo usar?</summary><div class="ans"><p>A velocidade máxima é de 32 km/h. <span class="pendente">[DADO: apoio da loja para iniciantes, ex. orientação na entrega]</span>. Conte no WhatsApp que é sua primeira moto.</p></div></details>
+    <details><summary>Quanto custa por km ou por recarga?</summary><div class="ans"><p>Depende do tamanho da bateria e da sua tarifa de energia. <span class="pendente">[CÁLCULO: DADO]</span>. Diga no WhatsApp quanto você paga por kWh (está na conta de luz), ou só a sua cidade, e a gente calcula com você. <span class="pendente">[CONFIRMAR: a loja faz esse cálculo]</span></p></div></details>
+    <details><summary>Como funciona a manutenção e a garantia?</summary><div class="ans"><p>Garantia: <span class="pendente">[DADO]</span>. Manutenção: <span class="pendente">[DADO]</span>.</p></div></details>
+    <details><summary>Tem financiamento? O emplacamento está incluso?</summary><div class="ans"><p>Financiamento: <span class="pendente">[DADO]</span>. Emplacamento e documentação: <span class="pendente">[DADO]</span>.</p></div></details>
+    <details><summary>Como sei se a minha cor está disponível?</summary><div class="ans"><p>Escolha a cor na página e clique em "Falar no WhatsApp". A cor já vai na mensagem, para a loja confirmar se ela está em estoque.</p></div></details>
+    <details><summary>Vocês entregam na minha cidade?</summary><div class="ans"><p>Atendemos DF e entorno. Pague e receba em 24h. Cidades atendidas: <span class="pendente">[DADO]</span>.</p></div></details>
+    <details data-oferta hidden><summary>A oferta exclusiva ainda vale?</summary><div class="ans"><p>Vale até <span data-oferta-validade></span>. Condições: <span data-oferta-condicoes></span>. Depois dessa data, ela sai do ar.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 2.14 CTA FINAL -->
+<section id="cta-final" class="cta-final" aria-labelledby="final-titulo">
+  <div class="cta-card on-card">
+  <div class="wrap">
+    <h2 id="final-titulo">Seu posto pode ser a tomada de casa. Fale com a BSB hoje.</h2>
+    <ul class="inline-list">
+      <li>Preço abaixo do mercado</li>
+      <li>Carrega em tomada comum, com carregador bivolt</li>
+      <li>Atendimento pelo WhatsApp</li>
+    </ul>
+    <p data-oferta hidden><strong data-oferta-texto></strong> &middot; válida até <span data-oferta-validade></span></p>
+    <p>Consulte a disponibilidade da sua cor no WhatsApp.</p>
+    <p>Atendimento de segunda a sexta, das 9h às 18h.</p>
+    <div class="cta-row">
+      <a class="btn" data-wa="padrao" data-pos="final" href="https://wa.me/?text=Ol%C3%A1!%20Vi%20o%20site%20da%20BSB%20Motos%20El%C3%A9tricas%20e%20tenho%20interesse%20na%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX.%20Ainda%20n%C3%A3o%20escolhi%20a%20cor.%20Quais%20cores%20est%C3%A3o%20dispon%C3%ADveis%20hoje%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+    </div>
+  </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 2.15 RODAPÉ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <!-- PENDENTE [DADO]: logo; fallback em texto -->
+        <h2 class="footer__brand">BSB Motos Elétricas</h2>
+        <p>Razão social: <span class="pendente">[DADO]</span> &middot; CNPJ <span class="pendente">[DADO]</span></p>
+            <p>Atendimento de segunda a sexta, das 9h às 18h.</p>
+      </div>
+      <div>
+        <h2>Contato</h2>
+        <ul>
+          <li><a data-wa="padrao" data-pos="rodape" href="https://wa.me/?text=Ol%C3%A1!%20Vi%20o%20site%20da%20BSB%20Motos%20El%C3%A9tricas%20e%20tenho%20interesse%20na%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX.%20Ainda%20n%C3%A3o%20escolhi%20a%20cor.%20Quais%20cores%20est%C3%A3o%20dispon%C3%ADveis%20hoje%3F" target="_blank" rel="noopener">Falar no WhatsApp</a> (<span data-wa-numero><span class="pendente">[DADO: número]</span></span>)</li>
+          <li>Redes sociais: <span class="pendente">[DADO]</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Legal</h2>
+        <ul>
+          <!-- PENDENTE [DADO]: página da política de privacidade (obrigatória, LGPD e tags de anúncio) -->
+          <li>Política de privacidade <span class="pendente">[DADO: criar página/link]</span></li>
+          <!-- Só aparece com ads.id preenchido (main.js): reabre o banner e permite revogar o consentimento. -->
+          <li data-consent-prefs hidden><button type="button" class="linklike">Preferências de cookies</button></li>
+          <li data-oferta hidden>Regulamento da oferta: <span data-oferta-condicoes></span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">Imagens ilustrativas. Especificações, autonomia e estoque sujeitos à confirmação no atendimento. A autonomia é aproximada e varia com o uso.</p>
+  </div>
+</footer>
+
+<!-- Botão WhatsApp fixo: barra inferior no mobile, flutuante no desktop. Some quando Hero ou CTA final estão na tela. -->
+<div class="wa-fixed" id="wa-fixed" hidden>
+  <a class="btn btn--block" data-wa="padrao" data-pos="fixo" href="https://wa.me/?text=Ol%C3%A1!%20Vi%20o%20site%20da%20BSB%20Motos%20El%C3%A9tricas%20e%20tenho%20interesse%20na%20moto%20el%C3%A9trica%20FOSTON%20X12%20MAX.%20Ainda%20n%C3%A3o%20escolhi%20a%20cor.%20Quais%20cores%20est%C3%A3o%20dispon%C3%ADveis%20hoje%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+</div>
+
+<!-- Banner LGPD: só é exibido quando ads.id estiver preenchido em js/config.js (hoje: nunca). Aceitar e Recusar têm o mesmo destaque. -->
+<div class="consent" id="consent" role="dialog" aria-labelledby="consent-txt" hidden>
+  <p id="consent-txt">Usamos cookies de publicidade (Google Ads) para medir o resultado dos anúncios. Você escolhe. Política de privacidade: <span class="pendente">[DADO: link da política de privacidade]</span></p>
+  <div class="consent__btns">
+    <button type="button" class="btn btn--sm btn--ghost" data-consent="denied">Recusar</button>
+    <button type="button" class="btn btn--sm btn--ghost" data-consent="granted">Aceitar</button>
+  </div>
+</div>
+
+<script src="js/config.js?v=20261011b"></script>
+<script src="js/main.js?v=20261024"></script>
+</body>
+</html>
